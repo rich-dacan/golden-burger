@@ -61,7 +61,7 @@ export const StyledLink = styled(Link)`
     align-items: center;
     justify-content: center;
 
-    color: var(--grey-50);
+    color: var(--golden-primary);
     font-size: var(--unit-rem-16);
     font-weight: var(--font-weight-6);
     line-height: var(--font-line-height-1);
@@ -74,8 +74,8 @@ export const StyledLink = styled(Link)`
 
   &.grey-Link:hover {
     transition: 0.8s;
-    background-color: var(--grey-50);
+    background-color: var(--golden-primary);
     border: solid 1px var(--grey-50);
-    color: var(--grey-20);
+    color: var(--golden-primary);
   }
 `;
