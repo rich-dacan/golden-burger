@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 
-    *{
+    * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         background-color: var(--grey-0);
+        height: 100vh;
     }
 
     button{
@@ -49,6 +50,8 @@ const GlobalStyle = createGlobalStyle`
     --pallete_warning: #FFCD07;
     --pallete_success:  #168821;
     --pallete_information: #155BCB;
+    --golden-primary: #9E6F21;
+    --golden-secondary: #C07F00;
 
     /* RADIUS - BORDER RADIUS */
     --radius-1: 0.3rem;
@@ -101,22 +104,22 @@ const GlobalStyle = createGlobalStyle`
     --unit-88: 88px;
 
     /* UNITS REM * EQUIVALENT TO PX UNITS */
-  
-    --unit-rem-4: 0.25rem; 
-    --unit-rem-8: 0.5rem; 
+
+    --unit-rem-4: 0.25rem;
+    --unit-rem-8: 0.5rem;
     --unit-rem-10: 0.625rem;
     --unit-rem-12: 0.75rem;
     --unit-rem-14: 0.875rem;
-    --unit-rem-16: 1rem; 
-    --unit-rem-20:1.25rem;  
-    --unit-rem-24: 1.5rem; 
-    --unit-rem-32: 2rem;   
-    --unit-rem-40: 2.5rem;  
-    --unit-rem-48: 3rem;   
-    --unit-rem-56: 3.5rem;  
-    --unit-rem-64: 4rem;    
-    --unit-rem-72: 4.5rem;  
-    --unit-rem-80: 5rem; 
+    --unit-rem-16: 1rem;
+    --unit-rem-20:1.25rem;
+    --unit-rem-24: 1.5rem;
+    --unit-rem-32: 2rem;
+    --unit-rem-40: 2.5rem;
+    --unit-rem-48: 3rem;
+    --unit-rem-56: 3.5rem;
+    --unit-rem-64: 4rem;
+    --unit-rem-72: 4.5rem;
+    --unit-rem-80: 5rem;
   }
 `;
 
