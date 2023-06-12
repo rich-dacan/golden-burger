@@ -11,10 +11,13 @@ import { loginSchema } from "./loginSchema";
 import { StyledButton, StyledLink } from "../../Styles/buttons-style";
 import { LoginWrapper, StyledLogin } from "./home-style";
 import { BurgerAnimation } from "../../Components/Animations/BurgerAnimation";
+import useWindowSize from "../../Hooks/useWindowSize";
 
 const LoginPage = () => {
-  const { userLogin } = useContext(UserContext);
   const [loading, setLoading] = useState(false);
+  const mobile = useWindowSize().width < 600;
+
+  const { userLogin } = useContext(UserContext);
 
   const {
     register,
@@ -33,23 +36,25 @@ const LoginPage = () => {
 
   return (
     <StyledLogin>
-      <div className="brand">
-        <BurgerAnimation />
+      {!mobile && (
+        <div className="brand">
+          <BurgerAnimation />
 
-        <div className="brand__children">
-          <figure>
-            <img src={shoppingBag} alt="Kenzie Hub slogan" />
+          <div className="brand__children">
+            <figure>
+              <img src={shoppingBag} alt="Kenzie Hub slogan" />
+            </figure>
+            <p>
+              A vida é como um sanduíche, é preciso recheá-la com os{" "}
+              <span>melhores</span> ingredientes.
+            </p>
+          </div>
+
+          <figure className="dots">
+            <img src={dots} alt="Dots style" />
           </figure>
-          <p>
-            A vida é como um sanduíche, é preciso recheá-la com os{" "}
-            <span>melhores</span> ingredientes.
-          </p>
         </div>
-
-        <figure className="dots">
-          <img src={dots} alt="Dots style" />
-        </figure>
-      </div>
+      )}
 
       <LoginWrapper>
         <h1>Golden Burger</h1>
@@ -108,6 +113,22 @@ const LoginPage = () => {
           </div>
         </div>
       </LoginWrapper>
+
+      {mobile && (
+        <div className="brand">
+          <BurgerAnimation />
+
+          <div className="brand__children">
+            <figure>
+              <img src={shoppingBag} alt="Kenzie Hub slogan" />
+            </figure>
+            <p>
+              A vida é como um sanduíche, é preciso recheá-la com os{" "}
+              <span>melhores</span> ingredientes.
+            </p>
+          </div>
+        </div>
+      )}
     </StyledLogin>
   );
 };

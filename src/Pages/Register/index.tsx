@@ -12,9 +12,12 @@ import { UserContext } from "../../Contexts/UserContext";
 import { StyledButton, StyledLink } from "../../Styles/buttons-style";
 import { RegisterWrapper, StyledRegister } from "./register-style";
 import { BurgerAnimation } from "../../Components/Animations/BurgerAnimation";
+import useWindowSize from "../../Hooks/useWindowSize";
 
 const RegisterPage = () => {
   const [loading, setLoading] = useState(false);
+  const mobile = useWindowSize().width < 600;
+
   const {
     register,
     handleSubmit,
@@ -33,26 +36,29 @@ const RegisterPage = () => {
 
   return (
     <StyledRegister>
-      <div className="brand">
-        <BurgerAnimation />
+      {!mobile && (
+        <div className="brand">
+          <BurgerAnimation />
 
-        <div className="brand__children">
-          <figure>
-            <img src={shoppingBag} alt="Kenzie Hub slogan" />
+          <div className="brand__children">
+            <figure>
+              <img src={shoppingBag} alt="Kenzie Hub slogan" />
+            </figure>
+            <p>
+              A vida é como um sanduíche, é preciso recheá-la com os{" "}
+              <span>melhores</span> ingredientes.
+            </p>
+          </div>
+
+          <figure className="dots">
+            <img src={dots} alt="Dots style" />
           </figure>
-          <p>
-            A vida é como um sanduíche, é preciso recheá-la com os{" "}
-            <strong>melhores</strong> ingredientes.
-          </p>
         </div>
+      )}
 
-        <figure className="dots">
-          <img src={dots} alt="Dots style" />
-        </figure>
-      </div>
+      {mobile && <h1>Golden Burger</h1>}
 
       <RegisterWrapper>
-        {/* <h1>Golden Burger</h1> */}
         <div className="content">
           <div className="content-header">
             <h2>Cadastro</h2>
@@ -139,6 +145,26 @@ const RegisterPage = () => {
           </div>
         </div>
       </RegisterWrapper>
+
+      {mobile && (
+        <div className="brand">
+          <BurgerAnimation />
+
+          <div className="brand__children">
+            <figure>
+              <img src={shoppingBag} alt="Kenzie Hub slogan" />
+            </figure>
+            <p>
+              A vida é como um sanduíche, é preciso recheá-la com os{" "}
+              <span>melhores</span> ingredientes.
+            </p>
+          </div>
+
+          {/* <figure className="dots">
+            <img src={dots} alt="Dots style" />
+          </figure> */}
+        </div>
+      )}
     </StyledRegister>
   );
 };

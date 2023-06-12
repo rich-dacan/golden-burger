@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const StyledRegister = styled.main`
   margin: var(--unit-40) var(--unit-20);
 
+  > h1 {
+    color: var(--golden-primary);
+  }
+
   .brand > .logo {
     margin-bottom: var(--unit-24);
   }
