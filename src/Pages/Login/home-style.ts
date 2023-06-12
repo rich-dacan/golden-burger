@@ -54,6 +54,10 @@ export const StyledLogin = styled.main`
     display: none;
     background-color: var(--grey-0);
     color: var(--grey-100);
+
+    > img {
+      margin: 0 auto;
+    }
   }
 
   .content {

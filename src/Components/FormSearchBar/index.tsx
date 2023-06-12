@@ -1,40 +1,41 @@
-import React, { useContext } from "react"
-import { UserContext } from "../../Contexts/UserContext"
-import { TextField } from "@material-ui/core"
-import IconButton from "@material-ui/core/IconButton"
-import SearchIcon from "@material-ui/icons/Search"
+import React, { useContext } from "react";
+import { UserContext } from "../../Contexts/UserContext";
+import { TextField } from "@material-ui/core";
+import IconButton from "@material-ui/core/IconButton";
+import SearchIcon from "@material-ui/icons/Search";
 
-export const FormSearchBar = ({ }) => {
+export const FormSearchBar: React.FC = () => {
+  const { products, setFilteredProdutcs, searchItem } = useContext(UserContext);
 
-  const { products, setFilteredProdutcs, searchItem } = useContext (UserContext)
-  
   return (
-
-    <form onSubmit={(event:React.FormEvent<HTMLFormElement>) => searchItem (event)}>
+    <form
+      onSubmit={(event: React.FormEvent<HTMLFormElement>) => searchItem(event)}
+    >
       <label htmlFor="input-search"></label>
-      
-      <TextField 
 
+      <TextField
         onChange={e => {
-          if(e.target.value === ""){
-            setFilteredProdutcs(products)
+          if (e.target.value === "") {
+            setFilteredProdutcs(products);
           }
         }}
-        
         id="input-search"
-        fullWidth  variant="outlined"
-          label="Digitar pesquisa" type="search" title="search"
-          autoComplete="autoComplete"
-          InputProps={{ 
-            endAdornment: (
+        fullWidth
+        variant="outlined"
+        label="Digitar pesquisa"
+        type="search"
+        title="search"
+        autoComplete="autoComplete"
+        InputProps={{
+          endAdornment: (
             <>
               <IconButton name="Pesquisar" type="submit">
-                <SearchIcon/>
+                <SearchIcon />
               </IconButton>
-            </>)
-          }}
+            </>
+          ),
+        }}
       />
-
     </form>
-  )
-}
+  );
+};

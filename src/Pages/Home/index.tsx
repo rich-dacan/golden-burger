@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import logo from "../../assets/burger.svg";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { CartContext } from "../../Contexts/CartContext";
@@ -9,6 +8,8 @@ import { ModalCart } from "../../Components/Modal";
 import { StyledHome } from "./home-style";
 import { ThemeProvider, createTheme } from "@material-ui/core/styles";
 import { StyledButton } from "../../Styles/buttons-style";
+import Header from "../../Components/Header";
+import { Navbar } from "../../Components/Navbar";
 
 const HomePage = () => {
   const { userLogout, filteredProdutcs, itensCounter } =
@@ -18,7 +19,7 @@ const HomePage = () => {
   const theme = createTheme({
     palette: {
       primary: {
-        main: "#27AE60",
+        main: "#9E6F21",
       },
       secondary: {
         main: "#EB5757",
@@ -30,38 +31,12 @@ const HomePage = () => {
     <StyledHome>
       {modal && <ModalCart />}
 
-      <header>
-        <div className="container">
-          <div>
-            <figure>
-              <img src={logo} alt="Kenzie Hub logo" />
-            </figure>
-
-            <nav>
-              <div>
-                <button>
-                  <ShoppingCartIcon
-                    className="shoppingIcon"
-                    onClick={() => modalCartToogle()}
-                  />
-                </button>
-                <p onClick={() => modalCartToogle()}>{itensCounter}</p>
-              </div>
-
-              <button>
-                <ExitToAppIcon
-                  className="exitIcon"
-                  onClick={() => userLogout()}
-                />
-              </button>
-            </nav>
-          </div>
-
-          <ThemeProvider theme={theme}>
-            <FormSearchBar />
-          </ThemeProvider>
-        </div>
-      </header>
+      <Navbar
+        theme={theme}
+        itensCounter={itensCounter}
+        modalCartToggle={modalCartToogle}
+        userLogout={userLogout}
+      />
 
       <main>
         <ul className="products-container">

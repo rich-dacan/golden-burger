@@ -51,9 +51,12 @@ export const StyledRegister = styled.main`
   }
 
   .brand > .dots {
-    /* display: none; */
     background-color: var(--grey-0);
     color: var(--golden-primary);
+
+    > img {
+      margin: 0 auto;
+    }
   }
 
   .content {
