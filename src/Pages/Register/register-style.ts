@@ -217,4 +217,8 @@ export const RegisterWrapper = styled.div`
   > h1 {
     color: var(--golden-primary);
   }
+
+  @media (max-width: 600px) {
+    justify-content: center;
+  }
 `;

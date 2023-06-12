@@ -15,7 +15,7 @@ import useWindowSize from "../../Hooks/useWindowSize";
 
 const LoginPage = () => {
   const [loading, setLoading] = useState(false);
-  const mobile = useWindowSize().width < 600;
+  const mobile = useWindowSize().width < 1000;
 
   const { userLogin } = useContext(UserContext);
 

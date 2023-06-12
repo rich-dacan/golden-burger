@@ -16,7 +16,7 @@ import useWindowSize from "../../Hooks/useWindowSize";
 
 const RegisterPage = () => {
   const [loading, setLoading] = useState(false);
-  const mobile = useWindowSize().width < 600;
+  const mobile = useWindowSize().width < 1000;
 
   const {
     register,
