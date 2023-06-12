@@ -37,11 +37,13 @@ export const UserProvider = ({ children }: iDefaultProviderProps) => {
     try {
       setLoading(true);
       const response = await api.post<iUserData>("/login", formData);
-      console.log(response.data);
-      toast.success(
-        `${response.data.user.name.toUpperCase().trim()}, seja bem vindo(a)!`
-      );
+      // console.log(response.data);
+      // toast.success(
+      //   `${response.data.user.name.toUpperCase().trim()}, seja bem vindo(a)!`
+      // );
+      toast.success(`${response.data.user.name}, seja bem vindo(a)!`);
       localStorage.setItem("@golden-burger", response.data.accessToken);
+      // localStorage.setItem("@golden-burger-user", response.data.user);
       setUser(response.data);
       getProducts();
       navigate("/home");

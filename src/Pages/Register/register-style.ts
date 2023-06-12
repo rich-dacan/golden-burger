@@ -199,12 +199,6 @@ export const StyledRegister = styled.main`
       width: 40%;
     }
   }
-
-  /* @media (min-width: 1440px){
-    } */
-
-  /* @media (min-width: 2200px){
-    } */
 `;
 
 export const RegisterWrapper = styled.div`
@@ -212,7 +206,6 @@ export const RegisterWrapper = styled.div`
   height: max-content;
   display: flex;
   justify-content: flex-end;
-  /* background-color: aqua; */
 
   > h1 {
     color: var(--golden-primary);
