@@ -2,6 +2,13 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const StyledButton = styled.button`
+  display: flex;
+  align-items: center;
+
+  > svg {
+    margin-left: 8px;
+  }
+
   &.golden-button-default {
     background-color: var(--golden-primary);
     border: solid 1px var(--golden-primary);

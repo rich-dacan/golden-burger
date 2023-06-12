@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const Container = styled.nav`
   display: flex;
   flex-direction: column;
+  max-width: 1500px;
+  margin: 0 auto;
   gap: var(--unit-12);
   padding: var(--unit-24) var(--unit-20);
   border-bottom: 1px solid var(--golden-primary);
@@ -18,9 +20,19 @@ export const Container = styled.nav`
     align-items: center;
     height: 40px;
 
-    > h1 {
-      font-size: 2.5rem;
-      color: var(--golden-primary);
+    > span {
+      display: flex;
+      align-items: center;
+
+      > h1 {
+        font-size: 2.5rem;
+        color: var(--golden-primary);
+        margin-left: 8px;
+      }
+
+      > img {
+        width: 50px;
+      }
 
       @media (max-width: 600px) {
         font-size: 1.5rem;
@@ -29,7 +41,6 @@ export const Container = styled.nav`
 
     > nav {
       display: flex;
-      /* flex-direction: column; */
       gap: var(--unit-16);
 
       > button {

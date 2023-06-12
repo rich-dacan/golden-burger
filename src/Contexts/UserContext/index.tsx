@@ -23,10 +23,10 @@ export const UserProvider = ({ children }: iDefaultProviderProps) => {
     const token = localStorage.getItem("@golden-burger");
     const autoLogin = async () => {
       if (token) {
-        console.log("TOKEN FOUND");
+        // console.log("TOKEN FOUND");
         navigate("/home");
       } else {
-        console.log("TOKEN NOT FOUND");
+        // console.log("TOKEN NOT FOUND");
         navigate("/");
       }
     };
@@ -41,7 +41,10 @@ export const UserProvider = ({ children }: iDefaultProviderProps) => {
       // toast.success(
       //   `${response.data.user.name.toUpperCase().trim()}, seja bem vindo(a)!`
       // );
-      toast.success(`${response.data.user.name}, seja bem vindo(a)!`);
+      toast.success(`${response.data.user.name}, seja bem vindo(a)!`, {
+        progressClassName: "toast__progress",
+        icon: false,
+      });
       localStorage.setItem("@golden-burger", response.data.accessToken);
       // localStorage.setItem("@golden-burger-user", response.data.user);
       setUser(response.data);

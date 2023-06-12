@@ -19,11 +19,21 @@ export const CartProvider = ({ children }: iDefaultProviderProps) => {
       let newProductList = [...cartProducts, product];
       setCartProducts(newProductList);
       cartProductManager(newProductList);
-      toast.success("Novo produto salvo com sucesso!");
+      toast.success("Adicionado ao carrinho com sucesso!", {
+        closeOnClick: true,
+        progressClassName: "toast__progress",
+        pauseOnHover: true,
+        icon: false,
+      });
     } else {
       let productCount = (product.count += 1);
       cartProductManager(cartProducts);
-      toast.success("Novo produto salvo com sucesso!");
+      toast.success("Adicionado ao carrinho com sucesso!", {
+        closeOnClick: true,
+        progressClassName: "toast__progress",
+        pauseOnHover: true,
+        icon: false,
+      });
     }
   };
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { StyledButton } from "../../../Styles/buttons-style";
 import { Wrapper } from "./style";
+import { BsCartPlus } from "react-icons/bs";
 
 interface Props {
   filteredProducts: any;
@@ -42,6 +43,7 @@ export const ProductsCard: React.FC<Props> = ({
                 onClick={() => addToCart(product)}
               >
                 Adicionar
+                <BsCartPlus size={20} />
               </StyledButton>
             </div>
           </Wrapper>

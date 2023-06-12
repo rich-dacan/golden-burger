@@ -26,7 +26,10 @@ export const Navbar: React.FC<Props> = ({
   return (
     <Container>
       <div>
-        <h1>Golden Burger</h1>
+        <span>
+          <img src="/hamburger.png" alt="burger-logo" loading="lazy" />
+          <h1>Golden Burger</h1>
+        </span>
 
         <nav>
           {!mobile && <FormSearchBar />}

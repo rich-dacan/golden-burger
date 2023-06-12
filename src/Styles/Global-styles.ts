@@ -33,6 +33,10 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'Roboto', sans-serif;
     }
 
+    .toast__progress {
+        background: var(--golden-primary);
+    }
+
     :root{
     --font-family-1: font-family: 'Inter', sans-serif;
     --backgroud-opacity: #12121478;
