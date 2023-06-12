@@ -9,6 +9,7 @@ export const Container = styled.nav`
   background-color: #f2f2f2;
   top: 0;
   position: sticky;
+  z-index: 1;
 
   > div {
     display: flex;
@@ -61,10 +62,10 @@ export const Container = styled.nav`
         > p {
           cursor: pointer;
           position: absolute;
-          top: 12px;
-          right: 52px;
+          top: 18px;
+          right: 57px;
 
-          background-color: var(--color-primary);
+          background-color: var(--golden-primary);
           border-radius: var(--radius-1);
           color: var(--white);
 

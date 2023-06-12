@@ -3,7 +3,7 @@ import React from "react";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
-import { ThemeProvider } from "@material-ui/core/styles";
+// import { ThemeProvider } from "@material-ui/core/styles";
 import { FormSearchBar } from "../FormSearchBar";
 import { Container } from "./style";
 import useWindowSize from "../../Hooks/useWindowSize";

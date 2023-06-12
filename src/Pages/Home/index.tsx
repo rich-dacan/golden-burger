@@ -10,6 +10,7 @@ import { ThemeProvider, createTheme } from "@material-ui/core/styles";
 import { StyledButton } from "../../Styles/buttons-style";
 import Header from "../../Components/Header";
 import { Navbar } from "../../Components/Navbar";
+import { ProductsCard } from "../../Components/Cards/ProductCard";
 
 const HomePage = () => {
   const { userLogout, filteredProdutcs, itensCounter } =
@@ -40,35 +41,10 @@ const HomePage = () => {
 
       <main>
         <ul className="products-container">
-          {filteredProdutcs &&
-            filteredProdutcs.map(product => (
-              <li className="product" key={`${product.id}`}>
-                <figure>
-                  <img
-                    onClick={() => addToCart(product)}
-                    src={product.img}
-                    alt="Edit"
-                  />
-                </figure>
-
-                <div>
-                  <h2>{product.name}</h2>
-                  <p>{product.category}</p>
-                  <p>
-                    {product.price.toLocaleString("pt-BR", {
-                      style: "currency",
-                      currency: "BRL",
-                    })}
-                  </p>
-                  <StyledButton
-                    className="green-button-default"
-                    onClick={() => addToCart(product)}
-                  >
-                    Adicionar
-                  </StyledButton>
-                </div>
-              </li>
-            ))}
+          <ProductsCard
+            filteredProducts={filteredProdutcs}
+            addToCart={addToCart}
+          />
         </ul>
       </main>
     </StyledHome>
