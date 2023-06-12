@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
+
 import { UserContext } from "../../Contexts/UserContext";
+
 import { TextField } from "@material-ui/core";
 import IconButton from "@material-ui/core/IconButton";
 import SearchIcon from "@material-ui/icons/Search";

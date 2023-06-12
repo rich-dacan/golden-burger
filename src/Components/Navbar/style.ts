@@ -5,6 +5,10 @@ export const Container = styled.nav`
   flex-direction: column;
   gap: var(--unit-12);
   padding: var(--unit-24) var(--unit-20);
+  border-bottom: 1px solid var(--golden-primary);
+  background-color: #f2f2f2;
+  top: 0;
+  position: sticky;
 
   > div {
     display: flex;
@@ -16,10 +20,15 @@ export const Container = styled.nav`
     > h1 {
       font-size: 2.5rem;
       color: var(--golden-primary);
+
+      @media (max-width: 600px) {
+        font-size: 1.5rem;
+      }
     }
 
     > nav {
       display: flex;
+      /* flex-direction: column; */
       gap: var(--unit-16);
 
       > button {

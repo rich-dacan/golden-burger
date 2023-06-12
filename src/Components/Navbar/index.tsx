@@ -6,9 +6,10 @@ import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { ThemeProvider } from "@material-ui/core/styles";
 import { FormSearchBar } from "../FormSearchBar";
 import { Container } from "./style";
+import useWindowSize from "../../Hooks/useWindowSize";
 
 interface Props {
-  theme: any;
+  theme?: any;
   itensCounter: number;
   userLogout: () => void;
   modalCartToggle: () => void;
@@ -20,12 +21,15 @@ export const Navbar: React.FC<Props> = ({
   userLogout,
   modalCartToggle,
 }) => {
+  const mobile = useWindowSize().width < 600;
+
   return (
     <Container>
       <div>
         <h1>Golden Burger</h1>
 
         <nav>
+          {!mobile && <FormSearchBar />}
           <div>
             <button>
               <ShoppingCartIcon
@@ -42,9 +46,9 @@ export const Navbar: React.FC<Props> = ({
         </nav>
       </div>
 
-      <ThemeProvider theme={theme}>
-        <FormSearchBar />
-      </ThemeProvider>
+      {mobile && <FormSearchBar />}
+
+      {/* <ThemeProvider theme={theme}></ThemeProvider> */}
     </Container>
   );
 };
