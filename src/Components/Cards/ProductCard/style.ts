@@ -9,9 +9,15 @@ export const Wrapper = styled.li`
   &:hover {
     transform: scale(0.98);
     transition: 0.8s;
+    transition: all ease-in-out 0.25s;
     box-shadow: 9px 9px 23px -6px rgba(0, 0, 0, 0.5);
     -webkit-box-shadow: 9px 9px 23px -6px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 9px 9px 23px -6px rgba(0, 0, 0, 0.5);
+
+    > figure > img {
+      transform: scale(1.15);
+      transition: all ease-in-out 0.25s;
+    }
   }
 
   > figure {
